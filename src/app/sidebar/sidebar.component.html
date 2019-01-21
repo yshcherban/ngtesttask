@@ -1,0 +1,25 @@
+<div [ngClass]="{sidebarMenu: true, open: sidebarMenuIsOpen}" >
+  <button type="button"
+          class="btn btn-link btn-close"
+          (click)="toggleSidebarMenu()">
+    <i [ngClass]="{fas:true, 'fa-angle-left': sidebarMenuIsOpen, 'fa-angle-right': !sidebarMenuIsOpen}"></i>
+  </button>
+  <ul class="list-group list-group-flush">
+    <a *ngFor="let menuItem of menuItems" class="list-group-item">
+      <i class="fab fa-stumbleupon-circle"></i> <span class="menu-item-text">{{menuItem}}</span>
+    </a>
+  </ul>
+</div>
+<div [ngClass]="{sidebarSubMenu: true, open: sidebarSubMenuIsOpen}">
+  <button type="button"
+          class="btn btn-link btn-close"
+          (click)="toggleSidebarSubmenu()">
+    <i [ngClass]="{fas:true, 'fa-angle-left': sidebarSubMenuIsOpen, 'fa-angle-right': !sidebarSubMenuIsOpen}"></i>
+  </button>
+  <ul class="list-group list-group-flush">
+    <a *ngFor="let subMenuItem of subMenuItems" class="list-group-item">
+      <i class="fab fa-stumbleupon-circle"></i> <span class="menu-item-text">{{subMenuItem}}</span>
+    </a>
+  </ul>
+</div>
+
